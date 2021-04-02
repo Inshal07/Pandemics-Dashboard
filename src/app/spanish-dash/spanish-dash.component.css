@@ -13,8 +13,9 @@
 .jumbotron{
   border: 1px white solid;
   color: white;
-  background: rgb(47,47,47);
-  background: linear-gradient(302deg, rgba(47,47,47,1) 0%, rgba(112,111,111,1) 100%);
+  background-color: #2a26ff;
+    background: linear-gradient(85deg,#00143ade,#000000bd);
+    box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
   margin-top: 20px;
  
 }
@@ -32,8 +33,9 @@ list-style: none;
 .card{
   margin: 10px;
   padding: 10px;
-  background: rgb(66,66,66);
-  background: linear-gradient(90deg, rgba(66,66,66,1) 0%, rgba(68,67,67,1) 100%);
+  background-color: #2a26ff;
+    background: linear-gradient(85deg,#00143ade,#000000bd);
+    box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
 }
 h3{
   margin: 30px;

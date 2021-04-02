@@ -30,6 +30,7 @@ export class AppDashboardComponent {
   totalData:any;
   ConvertedData:any;
   Country:any;
+  sortData:any;
   //For Modal
    open:any;
   //call for charts and fetch api data
@@ -64,13 +65,25 @@ export class AppDashboardComponent {
       let globalData = this.data;
       //country data for table
       this.countryName = globalData.Countries;
+      this.toastr.info("For Data we are using a open source API of Covid-19")
       
     }).catch(err=>{
       console.log(err);
       this.toastr.error("API is Down")
-      this.toastr.info("For Data we are using a open source API of Covid-19")
+  
     });
-   
+  }
+  sort(){
+    this.sortData = this.countryName.sort((a:any,b:any)=>{
+        return a.TotalConfirmed == b.TotalConfirmed?0
+              :a.TotalConfirmed>b.TotalConfirmed?1:-1
+   })
+  }
+  reverse(){
+    this.sortData = this.countryName.reverse((a:any,b:any)=>{
+      return a.TotalConfirmed == b.TotalConfirmed?0
+            :a.TotalConfirmed>b.TotalConfirmed?1:-1
+ })
   }
  // Main Data Of Covid-19 in charts form
   mychart(newTc:number, newTr:number, newTd:number){
@@ -154,17 +167,14 @@ export class AppDashboardComponent {
     this.ctx = this.canvas.getContext('2d');
   
    var myChart = new Chart(this.ctx, {
-      type: 'radar',
+      type: 'line',
       data: {
           labels: ['Total Confirmed','Recovered','Death'  ],
           datasets: [{
               label: 'Confirm',
-              data: [this.newNc],
+              data: [0,this.newNc],
               weight:1,
               order:2,
-              backgroundColor: [
-                'rgba(255, 255, 74, 1)',
-              ],
               borderColor: [
                 'rgba(255, 255, 74, 1)',
                
@@ -173,12 +183,9 @@ export class AppDashboardComponent {
           },
           {
             label: 'Recovered',
-            data:  [this.newNr],
+            data:  [0,this.newNr],
             weight:1,
             order:2,
-            backgroundColor: [
-              '#99FF33' ,
-            ],
             borderColor: [
               '#99FF33'  
             ],
@@ -186,12 +193,9 @@ export class AppDashboardComponent {
         },
         {
           label: 'Death',
-          data: [this.newNd],
+          data: [0,this.newNd],
           weight:1,
           order:2,
-          backgroundColor: [
-            '#FF3333' ,
-          ],
           borderColor: [
             '#FF3333'  
           ],
@@ -203,7 +207,7 @@ export class AppDashboardComponent {
         circumference: 1 * Math.PI,
         responsive: true,
         legend: { position: 'bottom',},
-        title: { display: true, text: 'Radar Chart', },
+        title: { display: true, text: 'Line Chart', },
         animation: { animateScale: true, animateRotate: true },
         cutoutPercentage: 70
     }

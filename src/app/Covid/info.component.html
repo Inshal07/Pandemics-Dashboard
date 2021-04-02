@@ -1,4 +1,10 @@
-<h5 class="text-center title" style="color: #f0fff0;">Covid-19</h5>
+<div class="d-flex justify-content-start back-nav ml-2">
+    <a class=" btn btn-light btn-circle btn-sm"  [routerLink]="['/disease-component']" routerLinkActive="router-link-active">
+      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+     </a>
+</div>
+<h3 class="title text-center text-white">Covid-19</h3>
+
 <div class="container text-center" >
   <div class="container">
     <div class="row text-center">
@@ -17,9 +23,9 @@
     </div>
   </div>
   
-  <div class="jumbotron" >
-    <h5>World</h5>
-    <p>In December 2019, a pneumonia outbreak was reported in Wuhan, China.On 31 December 2019, the outbreak was traced to a novel strain of coronavirus,which was given the interim name 2019-nCoV by the World Health Organization (WHO),later renamed SARS-CoV-2 by the International Committee on Taxonomy of Viruses.
+  <div class="jumbotron mt-3" >
+    <h4>World</h4>
+    <p>In December 2019, a pneumonia outbreak was reported in Wuhan, China. On 31 December 2019, the outbreak was traced to a novel strain of coronavirus,which was given the interim name 2019-nCoV by the World Health Organization (WHO),later renamed SARS-CoV-2 by the International Committee on Taxonomy of Viruses.
       The virus has a 96% similarity to a bat coronavirus, so it is widely suspected to originate from bats as well. They infect a range of animals including swine, cattle, horses, camels, cats, dogs, rodents, birds and bats.
      </p>
     <p>
@@ -36,8 +42,7 @@
         </div>
         <p>
           Since the coronavirus pandemic began in 2019, it has claimed the lives of more than two million people across the globe.
-          Although it is not yet known exactly where the outbreak first started, many early cases were in Wuhan, China - a city with a population of more than 11 million.
-          
+          Although it is not yet known exactly where the outbreak first started, many early cases were in Wuhan, China - a city with a population of more than 11 million.  
         </p>
         </div>
        <div class="card" id="typeDisease">
@@ -66,17 +71,15 @@
         <p>Lockdown is placing pressure on the global economy. We face a serious recession. 
           This pressure has led some world leaders to call for an easing of lockdown measures.</p>
         </div>
+     
        </div>
      </div> 
      <!-- Dashboard -->
      
 </div> 
-<!-- <input type="text" [(ngModel)]="userName"  ><br/>
-    {{userName}}
--->
+
 <div class="bottom d-flex justify-content-center" >
-      
-  <a  class="btn btn-outline-light m-3"  [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  >
+  <a  class="btn btn-outline-light mb-2"  [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  >
     <i class="fa fa-angle-down"></i>
     Graphs
   </a>  

@@ -1,7 +1,6 @@
-import { Binary } from '@angular/compiler';
+
 import { Component, Input, OnInit } from '@angular/core';
 import {ApiService} from '../services/api.service';
-import {HttpClient} from '@angular/common/http';
 import { Chart }  from 'chart.js';
 import { Router } from '@angular/router';
 
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './dash.component.html',
   styleUrls: ['./dash.component.css']
 })
-export class DashComponent implements OnInit {
+export class DashComponent  {
   /* Api Data var */
   
   newConfirm:any;
@@ -28,15 +27,18 @@ export class DashComponent implements OnInit {
     public router:Router
     ) { 
   }
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+ 
     Chart.defaults.global.defaultFontColor = 'white';
     setTimeout(()=>{
       this.getCovid();
-    },100);
+    },50);
   }
   refresh(){
     window.location.reload();
-    this.ngOnInit();
+    this.ngAfterViewInit()
   }
   
   getCovid(){
@@ -70,7 +72,10 @@ export class DashComponent implements OnInit {
                 weight:1,
                 order:2,
                 backgroundColor: [
-                'transparent' 
+                  'rgba(255, 255, 74, 1)',
+                  '#383CC1',
+                  '#99FF33',
+                  '#FF3333'  
                 ],
                 borderColor: [
                   'rgba(255, 255, 74, 1)',
@@ -105,7 +110,7 @@ linechart(newConfirm:any){
               data:  [500000000],
              
               backgroundColor: [
-                'Transparent'
+                '#383CC1'
               ],
               borderColor: [
                
@@ -117,10 +122,11 @@ linechart(newConfirm:any){
           {
             label: 'Covid-19',
             data:  [this.newConfirm] ,
-            borderColor: [
-            
+            backgroundColor:[
               '#99FF33',
-           
+            ],
+            borderColor: [
+              '#99FF33',
             ],
             borderWidth: 2
         },
@@ -129,10 +135,9 @@ linechart(newConfirm:any){
           data: [28616] ,
        
           backgroundColor: [
-            'Transparent'
+            '#FF3333'
           ],
           borderColor: [
-            
             '#FF3333'  
           ],
           borderWidth: 2
@@ -141,12 +146,10 @@ linechart(newConfirm:any){
         data:[13522],
        
         backgroundColor: [
-          'Transparent'
-          
+          'rgba(255, 255, 74, 1)',
         ],
         borderColor: [
           'rgba(255, 255, 74, 1)',
-      
         ],
         borderWidth: 2
     },

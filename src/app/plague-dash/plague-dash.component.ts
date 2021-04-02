@@ -45,17 +45,13 @@ export class PlagueDashComponent{
        this.years = this.parseData.map((years:{Years:any})=>{
         return years.Years
       })
-      
       this.confirmCases = this.parseData.map((totalCases:{TotalCases:any})=>{
         return totalCases.TotalCases
       })
-   
       this.deathCases = this.parseData.map((totaldeaths:{TotalDeaths:any})=>{
         return totaldeaths.TotalDeaths
       })
-
      })
- 
   }
 
   polarChart(){

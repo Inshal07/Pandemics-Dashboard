@@ -1,4 +1,6 @@
-
+.alert{
+  width:100%;
+}
 .object{
     padding: 20px;
 }
@@ -10,7 +12,9 @@
     border-radius: 20px;
   }
   .card{
-    background-color: rgba(57, 57, 57, 1);
+    background-color: #2a26ff;
+  background: linear-gradient(85deg,#00143ade,#000000bd);
+  box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
   }
   /*Refresh*/
   .circular-menu {

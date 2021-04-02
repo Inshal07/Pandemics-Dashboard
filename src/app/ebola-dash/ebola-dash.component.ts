@@ -57,7 +57,7 @@ export class EbolaDashComponent  {
       this.lineChartDeaths();
       this.barChart();
       this.horiChartDeaths();
-    },50);
+    },100);
   }
   DataPlagues(){
    

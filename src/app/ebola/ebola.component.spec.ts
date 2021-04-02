@@ -22,4 +22,5 @@ describe('EbolaComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

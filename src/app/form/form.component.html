@@ -8,13 +8,13 @@
   <form [formGroup]="this.form" >
     <div class="form-group">
       <label for="">Select the Disease</label>
-      <select class="form-control" name="" id="" formControlName="diseaseType" >
+      <select class="form-control" name="" id="" formControlName="diseaseType"  required>
         <option>Covid 19</option>
         <option>Ebola</option>
         <option>Plague</option>
       </select>
       <div class="mt-2">
-      <input type="text" formControlName="diseaseType" placeholder="Other Disease">
+      <input type="text" formControlName="diseaseType" placeholder="Other Disease" required>
     </div>
     </div>
     
