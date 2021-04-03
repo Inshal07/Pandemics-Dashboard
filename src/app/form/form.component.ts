@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { Review } from '../Share/review';
@@ -44,30 +44,33 @@ export class FormComponent implements OnInit {
   
   // Review/Sentiment Form
   form = new FormGroup({
-    userId: new FormControl(''),
-    photoURL:new FormControl(''),
-    userName: new FormControl(''),
-    diseaseType: new FormControl(''),
-    review: new FormControl(''),
+    userId: new FormControl(),
+    userName: new FormControl(),
+    date: new FormControl(),
+    time: new FormControl(),
+    diseaseType: new FormControl('',[Validators.required]),
+    review: new FormControl('',[Validators.required]),
   })
 
  // Review Submit( storing in Firebase with uid )
   SubmitReview(){
-    this.fireStore.collection('Review').add({
-      userUid: this.userId,
-      UserName: this.users,
-      DiseaseType:this.form.value.diseaseType,
-      Review: this.form.value.review,
-     }
-    )
-    .then(res=>{
-      this.status = "Success"
-      console.log(res)
-      this.form.reset()
-    })
-    .catch(error=>{
-      console.log(error)
-    })
+      this.fireStore.collection('Review').add({
+        userUid: this.userId,
+        UserName: this.users,
+        DiseaseType:this.form.value.diseaseType,
+        Review: this.form.value.review,
+       }
+      )
+      .then(res=>{
+        this.status = "Success"
+        console.log(res)
+        this.form.reset()
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    
+    
    this.router.navigate(['/review-component']);
   } 
 }

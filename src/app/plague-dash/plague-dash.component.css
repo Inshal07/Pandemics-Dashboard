@@ -11,8 +11,10 @@
   table{
       border-radius: 10px;
   }
-  .card{
-    background-color: rgba(57, 57, 57, 1);
+  .card, .table{
+    background-color: #2a26ff;
+    background: linear-gradient(85deg,#00143a,#000000bd);
+    box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
   }
   .circular-menu {
     position: fixed;
@@ -25,8 +27,8 @@
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-    background-color: hsl(0, 0%, 0%);
-    box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+    background-color: rgba(47, 0, 255, 0.486);
+    box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
     color: hsl(0, 0%, 100%);
     text-align: center;
     line-height: 3.9;

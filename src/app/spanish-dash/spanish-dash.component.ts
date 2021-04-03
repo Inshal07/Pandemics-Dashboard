@@ -11,7 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SpanishDashComponent implements OnInit {
   buttonSpace:object = {
-    "margin-right" : '20px',
+    "margin-right" : '5px',
+    "margin-left": '5px'
   }
   buttonAlign:object = {
     "margin-top":'40px',
@@ -63,7 +64,7 @@ export class SpanishDashComponent implements OnInit {
           rotation: 1 * Math.PI,
           circumference: 1 * Math.PI,
           responsive: true,
-          legend: { position: 'left',},
+          legend: { position: 'bottom',},
           title: { display: true, text: 'Pie Chart' },
           animation: { animateScale: true, animateRotate: true },
           cutoutPercentage: 70
@@ -100,7 +101,7 @@ export class SpanishDashComponent implements OnInit {
         rotation: 1 * Math.PI,
         circumference: 1 * Math.PI,
         responsive: true,
-        legend: { position: 'left',},
+        legend: { position: 'bottom',},
         title: { display: true, text: 'Bar Chart', },
         animation: { animateScale: true, animateRotate: true },
         cutoutPercentage: 70
@@ -135,7 +136,7 @@ export class SpanishDashComponent implements OnInit {
         rotation: 1 * Math.PI,
         circumference: 1 * Math.PI,
         responsive: true,
-        legend: { position: 'left',},
+        legend: { position: 'bottom',},
         title: { display: true, text: 'Radar Chart', },
         animation: { animateScale: true, animateRotate: true },
         cutoutPercentage: 70
@@ -167,7 +168,7 @@ export class SpanishDashComponent implements OnInit {
         rotation: 1 * Math.PI,
         circumference: 1 * Math.PI,
         responsive: true,
-        legend: { position: 'left',},
+        legend: { position: 'bottom',},
         title: { display: true, text: 'Bubble Chart', },
         animation: { animateScale: true, animateRotate: true },
         cutoutPercentage: 70

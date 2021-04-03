@@ -1,23 +1,28 @@
 
 .container{
-    background-image: url("../../assets/image.png");
+    /* background-image: url("../../assets/image.png"); */
+    background-color: #2a26ff;
+ background: linear-gradient(85deg,#00143ade,#000000bd);
+ box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
     min-height: 600px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     border-radius: 10px;
-    box-shadow: 2px 2px rgb(36, 36, 36);
+    
   }
  .card{
     color: white;
-    background-color:#242B2E;
+    background-color: #2a26ff;
+ background: linear-gradient(85deg,#00143ade,#000000bd);
+ box-shadow: .5px 1px rgba(47, 0, 255, 0.486);
     position: relative;
     left: 30%;
     top: 20%;
     padding: 20px;
     margin: 10px;
-    box-shadow: 2px 2px rgb(36, 36, 36);
+    
  }
  .circular-menu {
 	position: fixed;
@@ -30,8 +35,8 @@
 	width: 3.5em;
 	height: 3.5em;
 	border-radius: 50%;
-	background-color: hsl(0, 0%, 0%);
-	box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+	background-color: rgba(47, 0, 255, 0.486);
+	box-shadow: .5px 1px rgba(47, 0, 255, 0.486);   
 	color: hsl(0, 0%, 100%);
 	text-align: center;
 	line-height: 3.9;

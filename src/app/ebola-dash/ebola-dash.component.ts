@@ -9,7 +9,8 @@ import { convertToObject } from 'typescript';
   templateUrl: './ebola-dash.component.html',
   styleUrls: ['./ebola-dash.component.css']
 })
-export class EbolaDashComponent  {
+export class EbolaDashComponent implements OnInit {
+  
  items:any
  ebolaItems:any;
  //Convert Data
@@ -31,9 +32,10 @@ export class EbolaDashComponent  {
   constructor(
     public PlagueService: PlagueService
   ) { 
+    this.ngOnInit()
   }
- 
-  ngAfterViewInit(): void {
+
+  ngOnInit(): void {
     this.DataPlagues();
     Chart.defaults.global.defaultFontColor = 'white';
     setTimeout(()=>{
@@ -51,7 +53,6 @@ export class EbolaDashComponent  {
       this.lineChartSierra();
       this.barChartSierra();
       this.HoribarChartSierra();
-
       //Country
       this.lineChart();
       this.lineChartDeaths();
@@ -157,7 +158,6 @@ export class EbolaDashComponent  {
   lineStepGuinea(){
     this.canvas = document.getElementById('canvasStepped');
     this.ctx = this.canvas.getContext('2d');
-    
     var myChart = new Chart(this.ctx, {
         type: 'line',
         data: {
@@ -235,15 +235,13 @@ export class EbolaDashComponent  {
                 data: this.guineaDeath,
                 backgroundColor:'#FF3333',
                 fill:false
-          }],
-            
+          }],  
         },
         options:{
           legend:{position:"bottom"},
           responsive: true,
-          
         }
-        }
+      }
     );
   }
   /////////////////////// liberia //////////////////////////////////////////////

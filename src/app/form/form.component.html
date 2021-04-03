@@ -1,6 +1,8 @@
 
+<div class="container m-5">
 
-<div class="row text-center text-white">
+
+<div class="d-flex justify-content-start ml-5 text-center text-white">
 
 
 <div class="card" id="card-form">
@@ -8,7 +10,7 @@
   <form [formGroup]="this.form" >
     <div class="form-group">
       <label for="">Select the Disease</label>
-      <select class="form-control" name="" id="" formControlName="diseaseType"  required>
+      <select class="form-control" name="" id="" formControlName="diseaseType" required>
         <option>Covid 19</option>
         <option>Ebola</option>
         <option>Plague</option>
@@ -23,28 +25,25 @@
       <textarea class="form-control" formControlName="review" placeholder="Add Sentiments Here" name="" id="Review" rows="4"></textarea>
     </div>
     <div>
-        <button class="btn btn-outline-light" (click)="SubmitReview()">Post</button>
+        <button class="btn btn-outline-light" *ngIf="form.valid" (click)="SubmitReview()">Post</button>
     </div>
 </form> 
 </div>
-<div class="card-sample">
-  <div class="card " >
+<div class=" card-sample">
+  <div class="card">
     <div class="card-body">
       <h5 class="card-title">
-          <div class="chip">
+          <div class="chip" >
               {{form.value.diseaseType}}
           </div>
       </h5>
       <p class="card-text">{{form.value.review}}</p>
      
     </div>
-  </div>
+   </div>
+ </div> 
 </div>
-  
 </div>
-
-
-
 
 
 

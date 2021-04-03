@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-start back-nav ml-2">
+<div class="d-flex justify-content-start back-nav ml-3">
   <a class=" btn btn-light btn-circle btn-sm"  [routerLink]="['/ebola-component']" routerLinkActive="router-link-active">
     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
    </a>
@@ -150,7 +150,7 @@
 </div>
 </div>
 <div id="circularMenu" class="circular-menu">
-  <a class="floating-btn" (click)="ngAfterViewInit()">
+  <a class="floating-btn" (click)="ngOnInit()">
     <i class="fa fa-refresh"></i>
   </a>
 </div>

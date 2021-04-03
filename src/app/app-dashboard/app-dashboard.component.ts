@@ -43,12 +43,16 @@ export class AppDashboardComponent {
   constructor(private apiService: ApiService,
     private toastr: ToastrService
   ){ 
+    this.ngAfterViewInit()
   }
 
   //Modal Open
   openModal(){
     $('#staticBackdrop').modal('show')
     }
+   closeModal(){
+     $('#staticBackdrop').modal('hide')
+   } 
 
   // Country Data from Day one
   getCountryValue(selectCountry:any){
@@ -65,12 +69,12 @@ export class AppDashboardComponent {
       let globalData = this.data;
       //country data for table
       this.countryName = globalData.Countries;
-      this.toastr.info("For Data we are using a open source API of Covid-19")
+      
       
     }).catch(err=>{
-      console.log(err);
+      console.log(err)
       this.toastr.error("API is Down")
-  
+      this.toastr.info("For Data we are using a open source API of Covid-19")
     });
   }
   sort(){
@@ -80,11 +84,9 @@ export class AppDashboardComponent {
    })
   }
   reverse(){
-    this.sortData = this.countryName.reverse((a:any,b:any)=>{
-      return a.TotalConfirmed == b.TotalConfirmed?0
-            :a.TotalConfirmed>b.TotalConfirmed?1:-1
- })
+    this.sortData = this.countryName.reverse()
   }
+
  // Main Data Of Covid-19 in charts form
   mychart(newTc:number, newTr:number, newTd:number){
     this.canvas = document.getElementById('mychart');
@@ -169,7 +171,7 @@ export class AppDashboardComponent {
    var myChart = new Chart(this.ctx, {
       type: 'line',
       data: {
-          labels: ['Total Confirmed','Recovered','Death'  ],
+          labels:['Confirm-Cases','Recovered-Cases', 'Death-Cases'],
           datasets: [{
               label: 'Confirm',
               data: [0,this.newNc],

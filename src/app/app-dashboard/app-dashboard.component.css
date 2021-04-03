@@ -21,8 +21,14 @@
   margin-right:10px ;
   height: 40px;
 }
+.select-selected {
+  background-color: DodgerBlue;
+}
 .items{
+  border-radius:20px ;
+  color: white;
   border-radius: 10px;
+  background-color: #00143a;
 }
 #cards{
   display: flex;
@@ -46,8 +52,8 @@
 	width: 3.5em;
 	height: 3.5em;
 	border-radius: 50%;
-	background-color: hsl(0, 0%, 0%);
-	box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+	background-color: rgba(47, 0, 255, 0.486);
+	box-shadow: .5px 1px rgba(47, 0, 255, 0.486);   
 	color: hsl(0, 0%, 100%);
 	text-align: center;
 	line-height: 3.9;

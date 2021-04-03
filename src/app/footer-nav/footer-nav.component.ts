@@ -21,6 +21,17 @@ export class FooterNavComponent implements OnInit {
   logout(){
     return this.logoutuser.logOutUser();
   }
+  navOpen:any;
+  navclose:any;
+  closeNav(){
+    this.navclose = document.getElementById("nav");
+    if(this.navclose) this.navclose.style.width = "0%";
+   
+  }
+  openNav(){
+    this.navOpen = document.getElementById("nav")
+    if(this.navOpen) this.navOpen.style.width = "100%"
 
+  }
            
 }

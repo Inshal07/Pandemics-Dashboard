@@ -1,10 +1,10 @@
-.alert{
+ .alert{
   width:100%;
-}
-.object{
+ }
+ .object{
     padding: 20px;
-}
-.container {
+ }
+ .container {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -28,8 +28,8 @@
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-    background-color: hsl(0, 0%, 0%);
-    box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+    background-color: rgba(47, 0, 255, 0.486);
+    box-shadow: .5px 1px rgba(47, 0, 255, 0.486); 
     color: hsl(0, 0%, 100%);
     text-align: center;
     line-height: 3.9;

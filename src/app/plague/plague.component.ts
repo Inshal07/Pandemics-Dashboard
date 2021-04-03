@@ -17,12 +17,12 @@ export class PlagueComponent implements OnInit {
   }
   //Styling cards
   buttonSpace:object = {
-    "margin-right" : '20px',
+    "margin-right" : '5px',
+    "margin-left": '5px'
   }
   buttonAlign:object = {
     "margin-top":'40px',
   }
-
   confirmedCases: string = '13,522'
   deathCases: string = '1,621'
 }

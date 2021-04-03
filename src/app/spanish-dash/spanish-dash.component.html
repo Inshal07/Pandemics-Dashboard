@@ -1,20 +1,19 @@
-<div class="d-flex justify-content-start ">
-  <a class="btn btn-dark btn-circle floating-btn" [routerLink]="['/disease-component']" routerLinkActive="router-link-active">
+<div class="d-flex justify-content-start back-nav ml-3">
+  <a class=" btn btn-light btn-circle btn-sm"  [routerLink]="['/disease-component']" routerLinkActive="router-link-active">
     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
    </a>
 </div>
-
-<h5 class="text-center title text-white">Spanish-flu</h5>
+<h3 class="title text-center text-white">Spanish-flu</h3>
 <div class="container text-center" >
   <div class="container"> 
     <div class="row text-center">
       <div class="col-sm center" id="top" [ngStyle]="buttonSpace">
        <h6 id="num" >Confirm Cases</h6> 
-       <h3>500 millions</h3>
+       <h3>500 million</h3>
       </div>
       <div class="col-sm" style=" border-color:red; border-width: 2px; " id="top" [ngStyle]="buttonSpace">
         <h6 id="num">Death Cases</h6> 
-        <h3>50 millions</h3>
+        <h3>50 million</h3>
       </div>
     </div>
   </div>
@@ -77,11 +76,11 @@
        </div>
      </div> 
      <!-- Dashboard -->
-     
+     <div class="alert alert-light btn-outline-light text-center mt-3" role="alert">
+      Charts for Spanish-flu
+     </div>
 </div> 
-<div class="alert alert-light btn-outline-light text-center mt-3" role="alert">
- Charts for Spanish-flu
-</div>
+
 <div class="container " id="containers">
   <div class="card mt-2" id="cardss" style="width: 500px; height: 300px;">
     <div class="cont">

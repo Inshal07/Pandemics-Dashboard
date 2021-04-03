@@ -14,6 +14,7 @@ export class PlagueDashComponent{
   constructor(
     public plague: PlagueService
   ) {
+    this.ngAfterViewInit();
    }
  
   ngAfterViewInit(): void {
