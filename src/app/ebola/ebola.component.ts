@@ -17,7 +17,8 @@ export class EbolaComponent implements OnInit {
   }
   
   buttonSpace:object = {
-    "margin-right" : '20px',
+    "margin-right" : '5px',
+    "margin-left": '5px'
   }
   buttonAlign:object = {
     "margin-top":'40px',
