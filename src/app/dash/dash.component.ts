@@ -63,7 +63,7 @@ export class DashComponent  {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
     var myChart = new Chart(this.ctx, {
-        type: 'polarArea',
+        type: 'pie',
         data: {
             labels: ['Spanish-Flu','Covid-19','Ebola','Plague'],
             datasets: [{
@@ -91,8 +91,8 @@ export class DashComponent  {
           rotation: 1 * Math.PI,
           circumference: 1 * Math.PI,
           responsive: true,
-          legend: { position: 'left',},
-          title: { display: true, text: 'Cases of Pandemic Diseases Polar-Chart' },
+          legend: { position: 'bottom',},
+          title: { display: true, text: 'Cases of Pandemic Diseases Pie-Chart' },
           animation: { animateScale: true, animateRotate: true },
           cutoutPercentage: 70
       }

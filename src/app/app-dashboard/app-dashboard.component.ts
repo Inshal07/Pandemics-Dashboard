@@ -33,13 +33,15 @@ export class AppDashboardComponent {
   sortData:any;
   //For Modal
    open:any;
-  //call for charts and fetch api data
+  
+   //call for charts and fetch api data
   ngAfterViewInit() {
     Chart.defaults.global.defaultFontColor = 'white';
     setTimeout(()=>{
       this.init()
     },100);
   }
+  
   constructor(private apiService: ApiService,
     private toastr: ToastrService
   ){ 
@@ -50,7 +52,8 @@ export class AppDashboardComponent {
   openModal(){
     $('#staticBackdrop').modal('show')
     }
-   closeModal(){
+
+  closeModal(){
      $('#staticBackdrop').modal('hide')
    } 
 
@@ -69,20 +72,20 @@ export class AppDashboardComponent {
       let globalData = this.data;
       //country data for table
       this.countryName = globalData.Countries;
-      
-      
     }).catch(err=>{
       console.log(err)
       this.toastr.error("API is Down")
       this.toastr.info("For Data we are using a open source API of Covid-19")
     });
   }
+
   sort(){
     this.sortData = this.countryName.sort((a:any,b:any)=>{
         return a.TotalConfirmed == b.TotalConfirmed?0
               :a.TotalConfirmed>b.TotalConfirmed?1:-1
    })
   }
+
   reverse(){
     this.sortData = this.countryName.reverse()
   }
@@ -126,6 +129,7 @@ export class AppDashboardComponent {
       }
     });
   }
+
   polarChart(newTc:number, newTr:number, newTd:number){
     this.canvas = document.getElementById('polarchart');
     this.ctx = this.canvas.getContext('2d');
@@ -314,6 +318,7 @@ barChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number)
       }
   );
 }
+
 horiChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number){
   this.canvas = document.getElementById('HoriChart');
   this.ctx = this.canvas.getContext('2d');
@@ -353,6 +358,7 @@ horiChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number
       }
   );
 }
+
 lineSteppedChart(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number){
   this.canvas = document.getElementById('lineStepped');
   this.ctx = this.canvas.getContext('2d');
@@ -401,6 +407,7 @@ lineSteppedChart(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:numbe
       }
   );
 }
+
 lineChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number){
   this.canvas = document.getElementById('detailedLineChart');
   this.ctx = this.canvas.getContext('2d');
@@ -430,7 +437,6 @@ lineChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number
               borderColor:'#E21717',
               fill:false
       }],
-          
       },
       options:{
         legend:{position:"bottom"},
@@ -476,6 +482,5 @@ lineChartDetail(dates:Date, tConfirmed:number, tRecovered:number, tDeaths:number
       let globalData = this.ConvertedData;
     })
   }
-
 
 }
