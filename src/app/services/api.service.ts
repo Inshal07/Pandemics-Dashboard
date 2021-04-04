@@ -12,10 +12,12 @@ export class ApiService {
    countryUrl:string ="https://api.covid19api.com/dayone/country/";
    user:any;
    country:any ;
-
+   apiData:any;
   constructor(private http:HttpClient) { }
   getData(){
-    return this.http.get(this.url);
+  localStorage.setItem('data',this.url)
+  this.apiData = localStorage.getItem('data')
+    return this.http.get(this.apiData);
   }
  getCountryData(){
    return this.http.get<any>(this.countryUrl + this.country);

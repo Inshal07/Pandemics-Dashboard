@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,14 @@ export class AppComponent implements OnInit{
   }
  
    
-  constructor(){
- 
+  constructor(
+    updates: SwUpdate
+  ){
+ updates.available.subscribe(event =>{
+   updates.activateUpdate().then(()=>[
+     document.location.reload()
+   ])
+ })
   }
   ngOnInit(){
    /* this.apiService.getData().subscribe(

@@ -1,6 +1,31 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [{
+    "name": "covid-api",
+      "urls": [
+        "https://api.covid19api.com/summary"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "10s"
+      }
+  },
+  {
+    "name": "covid-api-country",
+      "urls": [
+        "https://api.covid19api.com/dayone/country/"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "1s"
+      }
+  }
+],
   "assetGroups": [
     {
       "name": "app",
