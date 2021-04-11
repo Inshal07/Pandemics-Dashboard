@@ -5,6 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Web-app Link
 Links: https://dashboard-user-34fbc.firebaseapp.com/
 
+## Web-app buid using technologies:
+
+1. Angular
+2. Bootstrap
+3. Firebase.
+4. PWA
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
